@@ -1,0 +1,26 @@
+<div class="container">
+  <form  #form="ngForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="inner-wrapper">
+    <div class="cart-wrapper">
+      <img class="cart-image" src="../assets/cart.svg" alt="cart"/>
+    </div>
+
+    <div class="input-wrapper">
+      <img class="input-icon" src="../assets/username.svg"/>
+      <input class="pivo-input" formControlName="email" name="username" type="text" placeholder="USERNAME"/>
+    </div>
+
+    <div class="input-wrapper">
+      <img class="input-icon" src="../assets/lock.svg"/>
+      <input class="pivo-input" formControlName="password" name="password" type="password" placeholder="PASSWORD" />
+    </div>
+
+   <div class="action">
+     <button type="submit" class="login-button" [ngClass] ="!form.form.valid ? 'disable' : ''" [disabled]="!form.form.valid">Login</button>
+     <div class="sub-action">
+       <a href="#" class="forgot-password">Forgot password?</a>
+     </div>
+   </div>
+
+  </form>
+
+</div>
